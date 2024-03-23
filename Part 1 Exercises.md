@@ -62,3 +62,12 @@ Given commands for the container:
 After that you can give website input in main terminal and get wanted output for given exercise
 
 # EXERCISE 1.5
+
+Comparing image sizes, we can see that ubuntu image is 5 times more bigger than alpine image
+
+![image](https://github.com/OliverK03/MOOC_DevOps/assets/161088975/f2b171be-f4af-41f8-bfa8-c3c7b7657892)
+
+Secret message is same on alpine aswell
+
+![image](https://github.com/OliverK03/MOOC_DevOps/assets/161088975/0fd8cd1f-6d2c-4ffe-b2e6-e6fd2f792411)
+
