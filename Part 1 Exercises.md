@@ -1,4 +1,4 @@
-# EXERCISE 1.1
+## EXERCISE 1.1
 
 Since we already did "Hello, World!" in the material let's do something else.
 
@@ -10,7 +10,7 @@ Submit the output for docker ps -a which shows 2 stopped containers and one runn
 
 ![image](https://github.com/OliverK03/MOOC_DevOps/assets/161088975/12f68608-4ba9-41d2-8119-9ccda32c26d9)
 
-# EXERCISE 1.2
+## EXERCISE 1.2
 
 We have containers and an image that are no longer in use and are taking up space. Running docker ps -a and docker image ls will confirm this.
 
@@ -20,7 +20,7 @@ Submit the output for docker ps -a and docker image ls
 
 ![image](https://github.com/OliverK03/MOOC_DevOps/assets/161088975/90b4ca32-f385-4a07-beb8-f29197c14a9b)
 
-# EXERCISE 1.3
+## EXERCISE 1.3
 
 Now that we've warmed up it's time to get inside a container while it's running!
 
@@ -30,7 +30,7 @@ Submit the secret message and command(s) given as your answer.
 
 ![image](https://github.com/OliverK03/MOOC_DevOps/assets/161088975/25f0fbcb-76f3-40b4-86fc-cc0f9f2c6884)
 
-# EXERCISE 1.4
+## EXERCISE 1.4
 
 For this exercise, I modified the given process starting command to be
 
@@ -61,7 +61,7 @@ Given commands for the container:
 
 After that you can give website input in main terminal and get wanted output for given exercise
 
-# EXERCISE 1.5
+## EXERCISE 1.5
 
 Comparing image sizes, we can see that ubuntu image is 5 times more bigger than alpine image
 
