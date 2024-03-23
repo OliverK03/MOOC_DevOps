@@ -18,7 +18,9 @@ Clean the Docker daemon by removing all images and containers.
 
 Submit the output for docker ps -a and docker image ls
 
-![image](https://github.com/OliverK03/MOOC_DevOps/assets/161088975/90b4ca32-f385-4a07-beb8-f29197c14a9b)
+```shell
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
 
 ## EXERCISE 1.3
 
