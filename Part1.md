@@ -6,6 +6,6 @@ Since we already did "Hello, World!" in the material let's do something else. St
 
 Submit the output for docker ps -a which shows 2 stopped containers and one running.
 
-&nbp;
+&nbps;
 
 **Output**
