@@ -29,38 +29,21 @@ Now that we've warmed up it's time to get inside a container while it's running!
 Image devopsdockeruh/simple-web-service:ubuntu will start a container that outputs logs into a file. Go inside the running container and use tail -f ./text.log to follow the logs. Every 10 seconds the clock will send you a "secret message".
 
 Submit the secret message and command(s) given as your answer.
-
-![image](https://github.com/OliverK03/MOOC_DevOps/assets/161088975/25f0fbcb-76f3-40b4-86fc-cc0f9f2c6884)
-
+```
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+```
 ## EXERCISE 1.4
 
 For this exercise, I modified the given process starting command to be
+```
+docker run -it --rm --name website ubuntu bash -c "while true; do echo 'Input website'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"
 
-**docker run -it --rm --name website ubuntu bash -c "while true; do echo 'Input website'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"**
+docker exec -it website bash
 
-Added:
+apt-get update
 
--it flag: Allows to interact with container's shell (-i) and provides TTY interface for inputs (-t)
-
---rm: Automatically removes itself after exiting
-
---name website: Not necessary, but helps with exec commands since now we have name we have setted ourself
-
-ubuntu: self-evident, runs ubuntu image
-
-bash -c: Launches bash shell which runs the given command
-
-After inputting that command, on another terminal, ran command:
-
-**docker exec -it website bash**
-
-This gives opportunity to get inside container and therefore give commands to it.
-Given commands for the container:
-
-**apt-get update**
-
-**apt-get -y install curl**
-
+apt-get -y install curl
+```
 After that you can give website input in main terminal and get wanted output for given exercise
 
 ## EXERCISE 1.5
