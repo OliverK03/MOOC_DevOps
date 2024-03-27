@@ -76,8 +76,53 @@ This time return the command you used to start process and the command(s) you us
 **Shell**
 ```
 docker run -d -it --name website ubuntu sh -c "echo 'Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+docker exec -it website bash
+apt-get update
+apt-get -y install curl
+helsinki.fi
+```
 
+## Exercise 1.5
+Here is the same application but instead of Ubuntu is using Alpine Linux:
+```
+devopsdockeruh/simple-web-service:alpine
+```
+Pull both images and compare the image sizes. Go inside the Alpine container and make sure the secret message functionality is the same. Alpine version doesn't have ```bash``` but it has ```sh```, a more bare-bones shell.
 
+**Shell**
+```
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+ubuntu       latest    ca2b0f26964c   4 weeks ago    77.9MB
+alpine       latest    05455a08881e   2 months ago   7.38MB
+```
+
+**Output**
+```
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+```
+
+## Exercise 1.6
+Run ```docker run -it devopsdockeruh/pull_exercise.```
+
+The command will wait for your input.
+Navigate through the Docker hub to find the docs and Dockerfile that was used to create the image.
+Read the Dockerfile and/or docs to learn what input will get the application to answer a "secret message".
+Submit the secret message and command(s) given to get it as your answer.
+
+**Shell**
+
+```
+run -it devopsdockeruh/pull_exercise.
+```
+**Output**
+
+```
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+```
+
+## Exercise 1.7
 
 
 
