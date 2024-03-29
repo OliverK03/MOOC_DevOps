@@ -123,6 +123,98 @@ You found the correct password. Secret message is:
 ```
 
 ## Exercise 1.7
+We can improve our previous solutions now that we know how to create and build a Dockerfile.
+
+Create a new file ```script.sh``` on your local machine with the following contents:
+
+```
+while true
+do
+  echo "Input website:"
+  read website; echo "Searching.."
+  sleep 1; curl http://$website
+done
+```
+
+Create a Dockerfile for a new image that starts from _ubuntu:22.04_ and add instructions to install ```curl``` into that image. Then add instructions to copy the script file into that image and finally set it to run on container start using CMD.
+
+After you have filled the Dockerfile, build the image with the name "curler".
+
+The following should now work:
+```
+docker run -it curler
+
+  Input website:
+  helsinki.fi
+  Searching..
+  <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+  <html><head>
+  <title>301 Moved Permanently</title>
+  </head><body>
+  <h1>Moved Permanently</h1>
+  <p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
+  </body></html>
+```
+
+**Dockerfile**
+```
+# Start from Ubuntu 22.04 image
+FROM ubuntu:22.04
+
+# Install curl
+RUN apt-get update && \
+    apt-get install -y curl && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy the script file into the image
+COPY script.sh /usr/src/app/
+
+# Set permissions to run the script
+RUN chmod +x /usr/src/app/script.sh
+
+# Set working directory
+WORKDIR /usr/src/app
+
+# Set the script to run on container start using CMD
+CMD ./script.sh
+```
+
+## Exercise 1.8
+
+By default our ```devopsdockeruh/simple-web-service:alpine``` doesn't have a CMD. Instead, it uses ENTRYPOINT to declare which application is run.
+
+In this exercise create a Dockerfile and use FROM and CMD to create a brand new image that automatically runs ```server```.
+
+The Docker documentation CMD says a bit indirectly that if a image has ENTRYPOINT defined, CMD is used to define it the default arguments.
+
+Tag the new image as "web-server"
+
+Return the Dockerfile and the command you used to run the container.
+
+**Dockerfile**
+```
+FROM devopsdockeruh/simple-web-service:alpine
+
+CMD server
+```
+**Shell**
+```
+docker run -it web-server
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+```
+
+
+
+
+
+
 
 
 
